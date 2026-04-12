@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+            color: white;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button id="Click" onclick="clickeMe()">Click me!</button>
+
+    <button id="Clicke2" ondblclick="Clicketo()">Click me 2 times!!</button>
+   
+   <div class="box" onmouseover="Moseover()">This is a div</div> <!--This is a event it work when mouse is hover on the div-->
+   
+   <script>
+      function clickeMe(){
+        const element = document.getElementById('Click');
+        element.innerHTML = 'Clicked';
+      }
+
+      function Clicketo(){
+        const element = document.getElementById('Clicke2');
+        element.innerHTML = 'Clicked'
+      }
+
+      function Moseover(){
+          document.querySelector('.box').innerHTML = "It changed";
+      }
+    </script>
+</body>
+</html>

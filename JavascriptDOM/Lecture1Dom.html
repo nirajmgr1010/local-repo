@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+
+  <button>Hello</button>
+  <button class="js-button">Second Button</button>
+ <script>
+       /*
+   document.querySelector() - lets us get any element from the page and put it inside JavaScript
+   */
+    console.log(document.querySelector('button')); //it print button element, get any element for eg button and put in java script
+   document.querySelector('button').innerHTML = 'Changed' //It changed the text of button 
+
+   const buttonElement  = document.querySelector('.js-button')//It search for class and get element and put in js variable
+    buttonElement.innerHTML = "changed" // it changed the text
+    /*
+  console.log(document.title); //It print DOM in console
+  document.title = "Changed"; //the title will changes
+
+  console.log(document.body);
+  console.log(typeof document.body); // it prints object 
+
+  console.log(document.body.innerHTML);
+  document.body.innerHTML = "<button>Good job!</button>";
+*/
+
+
+ // document.body.innerHTML = 'hello'; // it will remove all the elements from body and print hello only
+ // document.title = 'Good job!'; // it change the tittle text document is a built in object linked to the web page
+
+ </script>
+</body>
+</html>
