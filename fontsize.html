@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="js-p">Hello world</p>
+    <button id="js-font" onclick="font()" style="color:black;">
+        Click me
+    </button>
+<script>
+        let a = false;
+    function font(){
+        const element = document.getElementById('js-font');
+        const element2 = document.getElementById('js-p');
+        if(a===true){
+            element.style.color = 'red';
+            element2.style.fontSize = '30px';
+            element2.style.color = 'red';
+            a = false;
+        }
+        else{
+            element.style.color = 'black';
+            element2.style.color= 'black';
+            element2.style.fontSize = '16px';
+            a=true;
+        }
+
+    }
+</script>
+
+</body>
+</html>

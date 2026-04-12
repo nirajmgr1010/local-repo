@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const product = {
+        //     name: 'sock',
+        //     price: 1090
+        // };
+        // console.log(product);
+        // console.log(product.name);
+        // console.log(product.price);
+
+        // product.name = 'Cotton Socks';
+        // console.log(product);
+        // product.newProperty = true;
+        // console.log(product);
+
+        // delete product.newProperty;
+        // console.log(product);
+        // console.log(typeof product);
+        // const product2 = {
+        //     name: 'shirt',
+        //      ['delivery-time']: '1 day',
+        //      rating:{
+        //         stars:4.5,
+        //         count:87
+        //      },
+        //      fun: function function1(){
+        //         console.log('function inside object');
+        //      }
+        // };
+        // console.log(product2);
+        // console.log(product2.name);
+        /*Bracket Notation
+        -lets us use properties that don't work with dot notation
+        1. When the key has spaces
+        let obj = { "first name": "Niraj" }
+        console.log(obj["first name"]); // ✔ works
+        console.log(obj.first name);    // ❌ error
+        2. When the key starts with a number
+        3. When key contains special characters
+        4. When the property name is stored in a variable (dynamic key)
+        5. When adding properties dynamically
+        */
+    //     console.log(product2['name']); //It does same thing
+    //     //For eg:-
+    //    // console.log(product2.delivery-time);//We can't do minus doing like this so we use bracket notation
+    //     console.log(product2['delivery-time']);
+    //     console.log(product2.rating.count);
+    //     product2.fun();
+
+        // console.log(typeof console.log);
+        
+
+        //Json build in Object
+        /*
+        Json(JavaScrip Object Notation)
+        -a syntax
+        -similar to JavaScrip object
+        -but has less features
+        We use JSON
+        -When we send data between computers
+        -When we store data
+        Built-in JSON Object
+        Convert:
+        JavaScript Object -> JSON
+        */
+       //Convert
+    //    console.log(JSON.stringify(product2));
+    //    console.log(typeof JSON.stringify(product2));
+    //    const jsonString = JSON.stringify(product2);
+    //    //So JSON.parse convert json into js object
+    //    console.log (JSON.parse(jsonString));
+       /*
+       Next built-in object:
+       localStorage
+       -save values more permanently
+       */
+
+    //    console.log("Hello".length)
+    const object1={
+      message: 'Good Job',
+      price: 7777
+    };
+    console.log(object1);
+    const object2 ={
+        message: 'Good Job'
+    };
+    /*
+    // Checks if both variables point to the same object in memory (objects are not compared by value)
+Checks if object1 and object2 reference the same object in memory (objects are only equal by reference)
+    */
+    console.log(object1===object2);
+    const object3 = object1;
+    console.log(object1===object3); //Object 3 have same references of object1
+    //   const message = object3.message;
+       const {message,price} = object3; //Destructing -Easier way to take properties of an object
+      console.log(message,price);
+      //Shorthand Property
+      const Object5 = {
+        //    message: message
+        message,
+        // method: function function1(){
+        //     console.log('Method');
+        // }
+        //shorthand Method
+        method(){
+            console.log('Method2');
+        }
+      };
+      console.log(Object5);
+      Object5.method();
+    </script>
+</body>
+</html>

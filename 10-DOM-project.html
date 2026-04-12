@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+      }
+      .subscribe-btn{
+        margin-top: 10px;
+       border: none;
+       background-color: black;
+       color: white;
+       border-radius: 50px;
+       padding: 10px 20px;
+       font-size: 1rem;
+       font-weight: 600;
+       cursor: pointer;
+       margin-bottom: 30px;
+      }
+
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      body{
+        font-family: Arial;
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+      .cost-input{
+        font-size: 15px;
+        padding: 10px 10px;
+      }
+      .calculate-button{
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 1rem;
+        padding: 11px 15px;
+        cursor: pointer;
+      }
+      #cal-amazon{
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+    </style>
+</head>
+<body>
+       <p>YouTube Subscribe Button</p>
+    <button onclick="subscribe()" class="js-subscribe-button subscribe-btn">Subscribe</button>
+    <br>
+    <p>Rock Paper Scissors</p>
+    <a href="09-rock-paper-scissor.html">Click here</a>
+
+    <p id="cal-amazon">Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input cost-input" 
+       onkeydown="handleCostKeydown(event)">
+     <button onclick="CalculateTotal();" class="calculate-button">Calculate</button>
+      <p class="js-total-cost"></p>
+   <script>
+
+        function handleCostKeydown(event){
+        if(event.key === 'Enter'){
+          CalculateTotal();
+        }
+        }
+
+        //https://supersimple.dev/projects/dom/
+        function CalculateTotal(){
+            const inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value);
+            if(cost<40){
+                  cost = cost+10; 
+            }
+           document.querySelector('.js-total-cost')
+           .innerHTML = `$${cost}`;
+        }
+
+       function subscribe(){
+ const buttonElement = document.querySelector('.js-subscribe-button');
+         
+      if(buttonElement.innerText === 'Subscribe'){
+          buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed'); 
+          /*classList.add function does when only user click button it add
+            new class on html tag before <button class="js"> after click <button class="js is-subscribed>"  */
+        }
+      else{
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+        /*when user click button and this cond run means there is already class name that we 
+        want to remove in html tag so in this cond we remove that class name using classList.remove function*/
+      }
+       }
+       
+    </script>
+</body>
+</html>

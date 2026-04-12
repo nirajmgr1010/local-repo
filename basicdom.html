@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <p>Hello</p>
+    <button onclick="ChangeText()">Click me</button>
+     
+    <div>
+        <p id="js-p1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio laboriosam voluptatibus quasi aperiam expedita rerum ea architecto dolore, sed commodi doloremque ex in, nostrum dolores pariatur voluptatum omnis! Ea, reiciendis?</p>
+      <button id="js-btn1" onclick="DisplayText()">Hide text</button>
+    </div>
+    <script>
+        function ChangeText(){
+            const element = document.querySelector('p');
+              const element2 = document.querySelector('button');
+              if(element.innerText==='Hello'){
+              element.innerText = 'Welcome to DOM';
+              element2.innerText = 'Clicked';
+              element.style.color = 'Red';
+              element2.style.background = 'green';
+              }
+              else{
+                element.innerText = 'Hello';
+                element2.innerText = 'Click me';
+                element.style.color = 'black';
+                element2.style.background = 'red';
+              }
+        }
+           function DisplayText(){
+                 const element2 = document.getElementById('js-p1');
+                 if(element2.style.display ==='none'){
+                            element2.style.display='block';
+                 }
+                 else{
+                        element2.style.display='none';
+                 }
+              }
+    </script>
+</body>
+</html>

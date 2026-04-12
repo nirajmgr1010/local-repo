@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Input the number to add on each element of the Array: </p>
+    <input type="text" class="js-num">
+    <button onclick="getNum()">Submit</button>
+    <p class="display"></p>
+    <script>
+        // const Arr = [10,20,'Hello'];
+        // let lastIndex = Arr.length-1;
+        // console.log(Arr[lastIndex]);
+
+        /*
+        Create a function arraySwap(array) that takes an array and returns an
+        array where the first and last values are swapped (or switched)
+        .arraySwap([1,20,22,24,5]) => [5,20,22,24,1]
+        
+        const arr = [1,20,22,24,5];
+        let lastIndex = arr.length-1;
+        let firstIndex = 0;
+        
+        let temp = arr[firstIndex];
+        arr[firstIndex] = arr[lastIndex];
+        arr[lastIndex] = temp;
+
+    console.log(arr);*/
+
+    /*
+    Create a funciton addNum(array,num) that takes an array of numbers
+    and returns an array where each number is increased by 'num'.
+    .addNum([1,2,3],2) => [3,4,5]
+    .addNum([1,2,3],3) => [4,5,6]
+    */
+   function getNum(){
+    const arr = [1,2,3,4,5,6];
+     const getElement = document.querySelector('.js-num');
+     let num = parseInt(getElement.value);
+
+     addNum(arr,num);
+     getElement.value = '';
+   }
+   function addNum(arr, num){
+    const newarr = [];
+     for(let i =0; i<arr.length; i++){
+        newarr.push(arr[i]+num);
+     }
+     console.log(newarr);
+   }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- 7️⃣ Simple Calculator (Two Numbers)
+👉 Add two numbers and display the result. -->
+
+<input id="t" type="text">
+<input type="text" id="t2">
+<button id="js-btn" onclick="Add()">Enter</button>
+<p id="js-display-result"></p>
+<button id="js-three" onclick="three()">3</button>
+<button id="js-eight" onclick="eight()">8</button>
+<button onclick="AddAll()">Add</button>
+<button onclick="Remove()">Clear</button>
+<p id="js-total-show">0</p>
+<p id="show-three"></p>
+<script>
+
+    function Add(){
+           const element = Number(document.getElementById('t').value);
+           const element2 = Number(document.getElementById('t2').value);
+           const a = element + element2;
+           document.getElementById('js-display-result').innerHTML = `${a}`;
+
+           
+    } 
+    
+      function three(){
+        let a =3;
+          return a;
+           document.getElementById('show-three').innerText = `${a}`;
+      }
+      function eight(){
+              return 8;
+      }
+
+      function AddAll(){
+           const a = three() + eight();
+           document.getElementById('js-total-show').innerHTML = `${a}`;
+      }
+      function Remove(){
+        document.getElementById('js-total-show').innerHTML = 0;
+      }
+
+</script>
+</body>
+</html>

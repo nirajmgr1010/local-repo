@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <h2 class="display"></h2>
+
+    <script>
+        addArrays();
+        console.log('next');
+        countPositive();
+        console.log('next');
+        console.log(minMax([]));
+        console.log(minMax([3]));
+        console.log(minMax([1, -3, 10, -10, 2, 7]));
+        console.log('next');
+        console.log(countWords(['apple','grapes','apple','apple']));
+        function addArrays(){
+            /*
+            Create a function addArrays(array1,array2) that takes 2 arrays of 
+            numbers and adds each number in the arrays together
+            .addArrays([1,1,2], [1,1,3]) => [2,2,5]
+            .addArrays([1,3,4], [4,5,6]) => [5,7,9]
+            */
+            const arr1 = [1,1,2,1];
+            const arr2 = [1,1,3];
+            const newArr = [];
+            //  let size;
+            //  if(arr1.length > arr2.length){
+            //      size = arr1.length;
+            //  }
+            //  else{
+            //      size = arr2.length;
+            //  }
+            //  for(let i=0; i<size; i++){
+            //     newArr.push(arr1[i] + arr2[i]);
+            //  }
+            let size = Math.max(arr1.length, arr2.length);
+            for(let i=0; i<size; i++){
+            let val1 = arr1[i] || 0; //if undefined, use 0 so NaN problem
+            let val2 = arr2[i] || 0;
+            newArr.push(val1 + val2);
+            }
+            console.log(newArr);
+        }
+
+        function countPositive(){
+        /*
+         Create a function countPositive(nums) that takes an array of numbers
+         and returns how many numbers in the array are greater than 0.
+         .countPositive([1,-3,5]) => 2
+         .countPositive([-2,3,-5,7,10]) => 3
+        */
+        const arr = [-2,3,-5,7,10,20];
+        let count = 0,i=0;
+        while(i <= arr.length){
+            if(arr[i] > 0){
+                count++;
+                i++;
+            }
+            else{
+                i++;
+            }
+        }
+        console.log(count);
+        }
+
+        function minMax(arr){
+         /*
+         Create a function minMax(nums) that takes an array of numbers and returns an object with the minimum and maximum numbers in 
+         the array(do this using a loop instead of using something like Math.min).
+         .minMax([1,-3,5]) => {min:-3, max:10}
+
+         Update exercise to also handle these cases:
+         .minMax([]) => {min:null, max:null}
+         .minMax([3]) => {min:3, max:3}
+         */
+        
+       if(arr.length === 0){
+        return {min:null, max:null};
+       }
+         let min = arr[0];
+         let max = arr[0];
+
+         for(let i=0; i<arr.length; i++){
+            if(arr[i]<min){
+                if(min == null){
+                    min = null;
+                }
+                else{
+                min = arr[i];
+                }
+            }
+            if(arr[i]>max){
+                if(max == null){
+                    max = null;
+                }
+                else{
+                max = arr[i];
+                }
+            }
+         }
+         console.log('Min: ',min);
+         console.log('Max: ',max);
+        }
+
+        function countWords(words){
+            /*
+             Create a function countWords(words) that takes an array of strings
+             and returns an object with how may times each string appeared.
+             .countWords(['apple','grape','apple','apple']) => {apple:3, grape:1}
+             (Hint: you can access a property using a variable: object[variable];
+             This uses the value inside the variable as the property name.)
+             */
+
+             let result = {};
+             for(let i=0; i<words.length; i++){
+                let word = words[i];
+                if(result[word]){
+                    result[word]++;
+                }
+                else{
+                    result[word] = 1;// word is property and 1 is value
+
+                }
+             }
+             
+             return result;
+             
+
+        }
+   
+    </script>
+</body>
+</html>
