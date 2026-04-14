@@ -16,12 +16,47 @@
          -> Modify so that if 'search' appears multiple times in the array, it will console.log() the
          index of the first appearance of 'search'. use break;
         */
+        searchString(['hello','world','search','good','search']);
+        console.log('next');
+        console.log(findIndex(['hello','world','search','good','search'],'search'));
+        function searchString(arr){
+            let found = false;
+            let count = -1;
+           for(let i=0; i<arr.length; i++){
+            count++;
+              if(arr[i] === 'search'){
+               found = true;
+               break;
+              }
+           }
+           if(found){
+            console.log(count);
+           }
+           else{
+            console.log(-1);
+           }
 
+        }
+
+
+        
         /*
         Create a function findIndex(array, word) that searches an array for a string (in the 'word' parameter) and returns
         the index of the first appearance of the string. if it doesn't exist in the array, return -1.
         . findIndex (['green','red','blue','red'],'red') => 1
+
         */
+       function findIndex(array,word){
+        let found = false;
+        let count = -1;
+        for(let i=0; i<array.length; i++){
+            count++;
+            if(word === array[i]){
+                return i;
+            }
+        }
+        return -1;
+       }
 
     </script>
 </body>
