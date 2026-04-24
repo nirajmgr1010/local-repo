@@ -75,6 +75,16 @@ Find object by id
       text-align: center;
       margin-top: 15px;
      }
+     .todoGrid{
+      display: grid;
+      grid-template-columns: 50px 200px 200px 200px 200px;
+       column-gap: 10px;
+        row-gap: 10px;
+        align-items: center;
+        padding: 10px 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.2rem;
+     }
     </style>
 </head>
 <body>
@@ -92,7 +102,7 @@ Find object by id
 
     <div class="form-group">
     <label for="Contact">Phone No: </label>
-    <input type="number" placeholder="Number" required> 
+    <input type="number" placeholder="Number" id="Contact" required> 
     </div>
      
     <div class="form-group">
@@ -105,12 +115,16 @@ Find object by id
          </select>
     </div>
 
-    <button type="submit" id="sub-btn">Submit</button>
+    <button type="submit" id="sub-btn" onclick="addTodo()">Submit</button>
     </div>
 
     <div class="second-div">
               <h2 id="sec-div-h2">Student Information</h2>
+              <div class="js-todo-list todoGrid">
+
+              </div>
     </div>
+    <script src="To-do-Script.js"></script>
 
 </body>
 </html>
