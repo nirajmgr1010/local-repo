@@ -66,7 +66,8 @@
             Avantage
             - it doesn't block out code for 3 seconds
             */
-        setTimeout(function(){
+      /*
+            setTimeout(function(){
             console.log('timeOut');
             console.log('timeout2');
         }, 3000);
@@ -79,6 +80,20 @@
         }, 3000);
 
         console.log('next line 2');
+        */
+
+        //Another way to loop through an array
+        [
+           'make dinner',
+           'wash dishes',
+           'watch youtube'
+        ].forEach(function(value, index){ //passing a function int another function
+           if(value === 'wash dishes'){
+            return; //it skip wash dishes it works like continue here     
+           }
+            console.log(index);
+            console.log(value); 
+        });
     </script>
 </body>
 </html>

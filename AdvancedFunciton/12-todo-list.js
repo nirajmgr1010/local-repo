@@ -12,36 +12,22 @@ renderTodoList();
 function renderTodoList(){
 
     let todoListHTML = '';
-
-    todoList.forEach(function(todoObject, index) {
-        const {name, dueDate} = todoObject; 
+    for(let i=0; i<todoList.length; i++){
+        const todoObject = todoList[i];
+        // const name = todoObject.name;
+        // const dueDate = todoObject.dueDate;
+        const {name, dueDate} = todoObject; //destructing
         const html = `
         <div>${name} </div> 
         <div>${dueDate} </div>
         <div> <button onclick="
-         todoList.splice(${index},1); 
-         renderTodoList();
+         todoList.splice(${i},1); 
+         renderT odoList();
         " class="delete-todo-btn">Delete</button></div>
-        `; 
-         todoListHTML += html;
-    });
 
-   //  for(let i=0; i<todoList.length; i++){
-   //      const todoObject = todoList[i];
-   //      // const name = todoObject.name;
-   //      // const dueDate = todoObject.dueDate;
-   //      const {name, dueDate} = todoObject; //destructing
-   //      const html = `
-   //      <div>${name} </div> 
-   //      <div>${dueDate} </div>
-   //      <div> <button onclick="
-   //       todoList.splice(${i},1); 
-   //       renderT odoList();
-   //      " class="delete-todo-btn">Delete</button></div>
-
-   //      `; /*this is the button to delete using .splice arr method .splice(index no, value)*/
-   //      todoListHTML += html;
-   //  }
+        `; /*this is the button to delete using .splice arr method .splice(index no, value)*/
+        todoListHTML += html;
+    }
     document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 
 }
