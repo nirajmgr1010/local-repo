@@ -85,6 +85,13 @@ Find object by id
         font-family: 'Times New Roman', Times, serif;
         font-size: 1.2rem;
      }
+     .js-todo-list-filter{
+      display: grid;
+      grid-template-columns: 425px 200px;
+      margin-left: 1rem;
+      margin-top: 1rem;
+      text-align: center;
+     }
     </style>
 </head>
 <body>
@@ -114,12 +121,20 @@ Find object by id
             <option value="Other">Other</option>
          </select>
     </div>
-
     <button type="submit" id="sub-btn" onclick="addTodo()">Submit</button>
     </div>
 
     <div class="second-div">
               <h2 id="sec-div-h2">Student Information</h2>
+              <div class="js-todo-list-filter">
+               <input type="text" id="search" placeholder="Search by name" onkeyup="renderTodoList()">
+               <select  id="filterCourse" onchange="renderTodoList()">
+                  <option value="all">All</option>
+                  <option value="BIT">BIT</option>
+                  <option value="BCA">BCA</option>
+                  <option value="Other">Other</option>
+               </select>
+              </div>
               <div class="js-todo-list todoGrid">
 
               </div>

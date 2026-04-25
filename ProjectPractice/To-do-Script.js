@@ -6,22 +6,53 @@ const TodoList = [{
 }
 ];
 renderTodoList();
+// function renderTodoList(){
+    
+//     let todoListHtml = '';
+//     for(let i =0; i<TodoList.length; i++){
+//         const TodoObject = TodoList[i];
+//         const {id,name,PhoneNo,Course} = TodoObject;
+//         const matchName = name.toLowerCase().includes(searchValue);
+
+//         const matchCourse = searchCourse === "all" || searchCourse === Course;
+
+//         const Html = `
+//            <div>${id}</div>
+//            <div>${name}</div>
+//            <div>${PhoneNo}</div>
+//            <div>${Course}</div>
+//            <div><button onclick='deleteTodo(${i})'>Delete</button></div>
+//         `;
+//          todoListHtml += Html;
+//     }
+
+//     document.querySelector('.js-todo-list').innerHTML = todoListHtml;
+
+// }
 function renderTodoList(){
+
+    const searchValue = document.querySelector("#search").value.toLowerCase();
+    const searchCourse = document.querySelector("#filterCourse").value;
+    
     let todoListHtml = '';
     for(let i =0; i<TodoList.length; i++){
         const TodoObject = TodoList[i];
         const {id,name,PhoneNo,Course} = TodoObject;
+        const matchName = name.toLowerCase().includes(searchValue);
 
-        const Html = `
-           <div>${id}</div>
-           <div>${name}</div>
-           <div>${PhoneNo}</div>
-           <div>${Course}</div>
-           <div><button onclick='deleteTodo(${i})'>Delete</button></div>
-        `;
-         todoListHtml += Html;
+        const matchCourse = searchCourse === "all" || searchCourse === Course;
+
+      if(matchName && matchCourse){
+            const Html = `
+               <div>${id}</div>
+               <div>${name}</div>
+               <div>${PhoneNo}</div>
+               <div>${Course}</div>
+               <div><button onclick='deleteTodo(${i})'>Delete</button></div>
+            `;
+            todoListHtml += Html;
+        }
     }
-
     document.querySelector('.js-todo-list').innerHTML = todoListHtml;
 
 }
