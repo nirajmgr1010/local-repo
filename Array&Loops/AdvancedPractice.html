@@ -19,6 +19,7 @@
         searchString(['hello','world','search','good','search']);
         console.log('next');
         console.log(findIndex(['hello','world','search','good','search'],'search'));
+        removeEgg( ['food','egg','mango','apple']);
         function searchString(arr){
             let found = false;
             let count = -1;
@@ -59,9 +60,25 @@
        }
 
        /*
-       Create a function removeEgg(foods) that takes an array of strings and reutrns an array where the string 'egg' is 
-       removed .(Hint: loop through the array )
+       Create a function removeEgg(foods) that takes an array of strings and reutrns an array where
+        the string 'egg' is removed .(Hint: loop through the array )
        */
+      function removeEgg(foods){
+        let dlt = false;
+        for(let i=0; i<foods.length; i++){
+            if(foods[i] === 'egg'){
+                dlt = true;
+                foods.splice(i,1);
+            }
+        }
+        if(dlt){
+            alert('Successfully Delted');
+            console.log(foods);
+        }
+        else{
+            alert('Sorry not found');
+        }
+      }
     </script>
 </body>
 </html>

@@ -1,0 +1,133 @@
+<!--
+2. 🧮 Simple Calculator
+What you will learn:
+Functions
+Events
+Condition handling
+String/number conversion
+Features:
+Add, subtract, multiply, divide
+Clear button
+Real-time display
+Logic idea:
+Button click → store value → operator → second value → calculate result
+Upgrade:
+Keyboard input support
+History of calculations
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .main{
+     width: 35%;
+     height: 70%;
+     border: 2px solid black;
+     border-radius: 8px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+    #sub-main{
+        width: 95%;
+        height: 95%;
+        border: 2px solid black;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+    #display-num{
+    margin-top: 2px;
+    width: 99%;
+    height: 20%;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: center;
+    }
+    #digit-display-js{
+        margin-top: 60px;
+        margin-left: 400px;
+        font-size: 2rem;
+    }
+    #btn-num-js-cs{
+       width: 99%;
+       height: 75%;
+       /* border: 2px solid black;
+       border-radius: 8px; */
+       display: flex;
+       flex-direction: row;
+    }
+    #btn-digit-js-cs{
+      width: 70%;
+      height: 100%;
+      padding: 4px 4px;
+    }
+    button{
+        padding: 30px 50px;
+        font-size: 1rem;
+    }
+    #btn-function{
+    width: 30%;
+    height: 100%;
+     padding: 4px 4px;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+    }
+    </style>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <div class="main">
+      <div id="sub-main">
+         <div id="display-num">
+            <p id="digit-display-js">2+2 = 4</p>
+         </div>
+         <div id="btn-num-js-cs">
+            <div id="btn-digit-js-cs">  
+               <button id="nine" onclick="">9</button>
+               <button id="eight" onclick="">8</button>
+               <button id="seven" onclick="">7</button>
+               <button id="six" onclick="">6</button>
+               <button id="five" onclick="">5</button>
+               <button id="four" onclick="">4</button>
+               <button id="three" onclick="">3</button>
+               <button id="two" onclick="">2</button>
+               <button id="one" onclick="">1</button>
+               <button id="zero" onclick="">0</button>
+               <button id="plus" onclick="">+</button>
+               <button id="minus" onclick="">-</button>
+               <button id="divide" onclick="">/</button>
+               <button id="remainder" onclick="">%</button>
+               <button id="multiply" onclick="">*</button>
+            </div>
+           <div id="btn-function">
+            <button id="delete" onclick="">Del</button>
+            <button id="equalto" onclick="">=</button>
+           </div>
+         </div>
+      </div>
+    </div>
+    <script src="Calculator.js"></script>
+</body>
+</html>
